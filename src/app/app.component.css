@@ -1,0 +1,22 @@
+
+
+
+.intro{
+    display: flex;
+    flex-wrap: wrap;
+    background: #dddddd;
+}
+
+.item{
+    background: #dddddd;
+    height: 358px;
+    width: 323px;
+    margin: 5px;
+}
+
+.item-general{
+    background: #dddddd;
+    height: 358px;
+    width: 587px;
+    margin: 5px;
+}

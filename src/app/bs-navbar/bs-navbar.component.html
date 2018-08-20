@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">ZShop</a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/shoping-cart">Shopping Cart</a>
+      </li>
+      <ng-template #ananomousUser>  <li  class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li></ng-template>
+     
+      <li  ngbDropdown  *ngIf="auth.user$ | async as user; else ananomousUser" class="nav-item dropdown show">
+        <a   class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  ngbDropdownToggle>{{ user.displayName }}</a>
+        <div  class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu >
+          <a class="dropdown-item" routerLink="/admin/products">Action</a>
+          <a class="dropdown-item" routerLink="/admin/orders">Another action</a>
+          <a class="dropdown-item" routerLink="/my-orders">Something else here</a>
+          <a class="dropdown-item" (click)="logout()">log out</a>
+        </div>
+      </li>
+    </ul>
+   
+  </div>
+</nav>
